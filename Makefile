@@ -1,8 +1,8 @@
 INCLUDES := -I.
 LIBRARY  := -lcuda -lcudart
 
-a.out: chap2_02.cu
-	nvcc $(INCLUDES) $(LIBRARY) -o $@ $<
+compile: 
+	nvcc $(INCLUDES) $(LIBRARY) $(src) -o $(basename $(src)).out
 
 clean:
-	rm -f a.out
+	rm -f *.out
